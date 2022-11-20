@@ -1,0 +1,43 @@
+@media only screen and (max-width: 500px) {
+    /* For mobile phones: */
+    .landing, .landing-text h1,.landing-text h3, .landing-text .btn,img , .landing-text .btn a{
+      width: 100%;
+      height: auto;
+    }
+  }
+ .landing{
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+ }
+
+ .landing-text h1{
+    font-size: 65px;
+}
+
+.landing-text h3{
+    margin: 6px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #777777;
+    margin-right: 20px;
+}
+
+.landing-text .btn{
+    width: 200px;
+    margin-top: 30px;
+    padding: 14px 20px 12px 20px;
+    background-color: #007bff;
+    border-radius: 45px;
+    text-align: center;
+
+}
+
+.landing-text .btn a{
+    font-size: 18px;
+    color: #fff;
+}
+
+  img {
+    float: right;
+  }

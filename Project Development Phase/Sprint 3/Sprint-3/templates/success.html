@@ -1,0 +1,61 @@
+{% extends 'base.html'%}
+
+<!--title tag-->
+{% block title %}
+<title>Plasma-Success</title>
+{% endblock %}
+
+{% block link %}
+{% endblock %}
+
+<!---User Content-->
+{% block content %}
+            
+        
+
+        <div class="container-fluid">  
+            <div class="text-center">  
+                
+            <style>
+            
+            .hide {
+              display: none;
+            }
+            .myDIV:hover + .hide {
+              display: block;
+              color: red;
+            text-align: top;
+            }        
+                    
+                    
+            </style>
+                
+                
+                
+            <div class="container">   
+            <div class="row p-1">
+              <div class="col-sm-12">
+                <div class="card" style="margin-top: 70px;">
+                  <div class="msg">{{ msg }}</div>
+                  <div class="card-body">
+                
+            
+            <div class="myDIV">
+                    
+            <img src="{{ url_for('static',filename='success.png')}}" class="img-fluid" width="40%">  
+                    
+            </div> <div class="hide">You are a real superhero!</div>
+            
+                    <h2>Thank you for donating plasma.</h2> 
+                      </div>
+                            </div>
+                              </div>  
+                                  </div>
+                                        </div></div> </div> 
+      
+
+{% endblock%}
+
+
+
+
