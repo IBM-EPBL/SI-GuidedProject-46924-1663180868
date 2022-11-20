@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-node-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flasknode
+  template:
+    metadata:
+      labels:
+        app: flasknode
+    spec:
+      containers:
+        - name: flasknode
+          image: uk.icr.io/flaskpda/flaskapp@sha256:07f1f4fdd902ea69356b975ca29597ad33465d82c685b158afe412638f98c530
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flasknode-svc
+spec:
+  type: NodePort
+  selector:
+    app: flasknode
+  ports:
+    - name: flasknode
+      protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30009
