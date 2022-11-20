@@ -1,3 +1,0 @@
-flask
-ibm_db
-sendgrid
