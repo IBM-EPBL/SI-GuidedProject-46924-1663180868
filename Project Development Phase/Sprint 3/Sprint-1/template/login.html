@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+
+<!--title tag-->
+{% block title %}
+<title>Plasma-LogIn</title>
+{% endblock %}
+
+<!---Login Content-->
+{% block content %}
+<!---Login form-->
+<div class="container">
+    <div class="text-center mt-5"><h3>LogIn using UserName and Password</h3></div>
+
+</div>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-6 ">
+            <div class="card">
+                <div class="card-body">
+                    <!----Form content---->
+                    <form action="/" method="POST">
+                        <div class="msg">{{ msg }}</div>
+
+                        <div class="form-group">
+                            <label for="username">User Name</label>
+                            <input type="text" class="form-control" name="username" id="username" required placeholder="Enter UserName">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password" required>
+                        </div>
+
+                        <div>
+                            <a href="{{url_for('forgetpassword')}}">Forget Password</a>
+                        </div>
+                        <!--button-->
+                        <div class="form-group text-center">
+                            <input type="submit" value="LogIn" class="btn btn-success">
+                        </div>
+                        <br>
+                        <div style="text-align: center;">
+                            <p>Don't have an account <a href="{{ url_for('signin') }}">Register here</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
