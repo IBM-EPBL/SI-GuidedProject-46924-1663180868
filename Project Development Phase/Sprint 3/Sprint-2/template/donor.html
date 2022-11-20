@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+
+<!--title tag-->
+{% block title %}
+<title>Plasma-Donor</title>
+{% endblock %}
+
+<!---Donor Content-->
+{% block content %}
+<!---Donor table-->  
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 ">
+          <div class="msg">{{ msg }}</div>
+            <div class="">
+                <div class="">
+                  <h6 style="text-align: center; margin-top: 50px;color: red;">Note: Please note the donor email from the table you want to request.</h6>
+  <table class="table table-hover table-bordered" style="margin:100px 0px; text-align: center;">
+    <thead class="thead-light">
+      <tr>
+        
+        <th scope="col">Email</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Blood Group</th>
+        <th scope="col">Area</th>
+        <th scope="col">City</th>
+        <th scope="col">District</th>
+        <th scope="col">Make a Request</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for row in donor2 %}
+        <td>{{ row["EMAIL"] }}</td>
+        <td>{{ row["AGE"] }}</td>
+        <td>{{ row["GENDER"] }}</td>
+        <td>{{ row["BLOOD"] }}</td>
+        <td>{{ row["AREA"] }}</td>
+        <td>{{ row["CITY"] }}</td>
+        <td>{{ row["DISTRICT"] }}</td>
+        <td>
+        <a href="{{url_for('request_page')}}" class="btn-sm btn-info" style="color: white; text-decoration:none">Request</a>
+        </td>
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
