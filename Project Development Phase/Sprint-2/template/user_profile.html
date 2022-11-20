@@ -1,0 +1,76 @@
+{% extends 'base.html'%}
+
+<!--title tag-->
+{% block title %}
+<title>Plasma-Profile</title>
+<style>
+    .profile-area{
+    padding:70px 0;
+    border: 2px solid rgba(233, 226, 226,0.4);
+    margin-right: 190px;
+    margin-left: 190px;
+    margin-top: 50px;
+    }
+.card{
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    overflow:hidden;
+    border-radius:15px;
+    margin-top:30px;
+    background-image: linear-gradient(#538FFB,#538FFB);
+    height: 200px;
+    
+    }
+    .card:hover{
+        border-color:#0804f9;
+        transform: rotate(1deg);
+        transition:.7s
+    }
+    .main-text, .card-body{
+        text-align: center;
+        padding-top: 69px;
+    }
+    .btn{
+        padding: 10px 10px;
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block link %}
+
+{% endblock %}
+<h2 class="page-header  text-center" style="margin-top: 30px; color:black">Your Profile</h2>
+        
+        
+<!---User Content-->
+{% block content %}
+<div class="container">
+<h3 class="text-danger" style="margin-top: 50px;">Welcome : {{session["username"]}}!!</h3>
+</div>
+<div class = "profile-area">
+<div class = "container">
+    <div class="msg">{{ msg }}</div>
+    <div class="row">
+        
+    <div class = "col-12 col-md-6 col-lg-6">
+        <div class = "card">
+        <div class = "main-text card-body">
+            <div><a href="{{ url_for('register') }}" class="btn btn-light">Donate Plasma</a></div>
+        </div>
+        </div>
+    </div>
+    <div class = "col-12 col-md-6 col-lg-6">
+        <div class = "card">
+        <div class = "main-text card-body">
+            <div><a href="{{ url_for('donorlist') }}" class="btn btn-light">Request Plasma</a></div>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div><br>
+    <div class="container">
+    <a href="{{url_for('logout')}}" class="btn btn-danger">Log Out</a></div>
+
+
+{% endblock%}
